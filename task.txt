@@ -1,0 +1,46 @@
+DIFFERENCE BETWEEN HTTP 1.1 AND HTTP 2
+
+What is HTTP?
+
+	HTTP is abbreviated as Hyper Text Transfer Protocol. The term “protocol” refers to Rules or standards. Hence, HTTP is transferring the hyper text file from our browser to the server. Suppose a person wants to see YouTube he just enters a YouTube website (URL) in browser. Now the browser sent a request to server for the YouTube and the server search for the request then gives the YouTube page back to the browser as response. Here browser is known as Client.
+Altogether, a request is sent by the client (Browser) and the server response by the content which the client ask for.
+
+Let see the difference between HTTP1 and HTTP2
+
+HTTP1.1
+
+HTTP 1.1 is introduced on 1997, it is developed on HTTP 1.0 to overcome certain drawbacks. 
+
+Why it is introduced?
+- Internet landscaping was constantly changing with websites becoming more dynamic and heavier.
+- Internet ecosystem is changing rapidly during that phase with SEO, e-billing etc.,  
+to solve those requirements but it also have advantages and disadvantages. 
+
+How it is works?
+
+	A request is sent to server there TCP connection is established before the communication and there will be single TCP connection initially.  If a request sent and the TCP connection close after the initial response received and second TCP connection established when second request is as per the client request.
+Let say we request the html file it also requires the internal file like JS, CSS etc., so TCP connection established and the initial request open and the response receives from server and second request creates for JS get response then request will create for cs file. Altogether certain connections will create based on the number of files is requires for the request we ask to server on one by one manner.
+Advantage 
+To overcome the flaw, keep alive connection is introduced HTTP 1.1 assumes that a TCP connection should be kept open unless directly told to close. This allows the client to send multiple requests along the same connection without waiting for a response to each. It will be improving the performance.
+
+Disadvantages
+1. HOL- HOL head of line blocks
+The initial TCP connection blocks the succeeding request until it get the request and each connection do the same.
+2. Repetitions of Header.
+TCP connection requires the header like user agent, cookies and cache control to receive response but the problem is on every succeeding request the header data will repeated. Results in more processing time. Header information is repeated with every request so header is useless data for succeeding requests and it will not compress the header within the requests. 
+
+WHY HTTP2
+	HTTP2 was introduce to overcome certain drawbacks of HTTP1.1 and some feature is added to the Http2.
+All at the motive to improve performance of the network for the smooth transaction of client request and server’s responses.
+
+How it is work?
+	HTTP2 works on single TCP connection.  Where   the TCP is in stream format    and each stream act like an request from the client. TLS setup is compulsory. Hence, HTTPS is mandatory for the HTTP2. So, there is an single secured TCP connection is established. Results in fast data transfer.
+
+FEATURE OF HTTP2
+HPACK. 
+It is the technology to separate the Header data and the basic request data. Hpack automatically enables the header caching.  Which helps the succeeding request doesn’t carry the header data it can use the header data from the initial request’s header data cache. Result in enabling that the delivery of data is faster.
+
+PUSH
+It is a server-side setup which enables the auto sent off the mandatory files for the server page which was request from the client. For instance, the client requests the website which contains HTML and there is mandatory use of CSS, JavaScript. The push finds that the CSS and java scripts are mandatory source for website. Then sent it along with the HTML response without the separate request. 
+
+
