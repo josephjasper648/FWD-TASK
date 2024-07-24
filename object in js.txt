@@ -1,0 +1,91 @@
+OBJECTS IN JAVASCRIPT
+Object in javascript is a data type, everything in javascript is consider as a object. 
+Objects is described as a property with the combination of Key & value. 
+There are lot of ways to create a object. Particulary object constructor syntax and literal syntax. Since, the easiest method to create an object is literal syntax method.
+-	Object constructor syntax
+Const (obj) = new obj ( )
+-	Literal syntax 
+Const (obj) = { }
+Let see accessible of  object’s literal syntax
+ An object is consist of property and method,
+Property: Property is key value pairs and the key is an identifier of the object.
+Method: A function which is present inside the object is called method
+For example:
+const person = {
+    firstName:"james",
+    lastName:"zones",
+    age:24,
+    parent:{
+        father:"jack",
+        mother:"Jessy"
+    },
+    Name: function( ) {
+    console.log( this.firstName + " "+ this.lastName )
+    } 
+}
+To access the object’s properties with the following syntax
+  person.firstName
+	james 
+person.parent.father
+	 jack 
+Inorder to access the method need to specify “( )” as usual to call function
+ And particulary the syntax “.this” is use to access the key inside the object.
+person.Name()
+	james zones
+n modern javascript we don’t need to specify as
+Name: function(){
+    console.log(this.firstName+" "+this.lastName)
+    } 
+Just to denote the method use propery theneven get the same result
+Name( ){
+    console.log(this.firstName+" "+this.lastName)
+    }
+}
+To merge the two objects using the syntax
+We already have an object “person” and then we introduce the new object  as
+const newPerson = {
+favcolour:"Black",
+blood:"B+ve"
+}
+Let merge the two objects using the syntax 
+object.assign (person,newPerson)
+1.	Name: ƒ ()
+2.	age: 24
+3.	blood: "B+ve"
+4.	favcolour: "Black"
+5.	firstName: "james"
+6.	lastName: "zones"
+7.	parent: {father: 'jack', mother: 'Jessy'}
+
+Spread
+This merge action also could be done with another syntax called spread operator.
+const spread = {...person, ...newPerson}
+console.log(spread)
+1.	Name: ƒ ()
+2.	age: 24
+3.	blood: "B+ve"
+4.	favcolour: "Black"
+5.	firstName: "james"
+6.	lastName: "zones"
+7.	parent: {father: 'jack', mother: 'Jessy'}
+This operator copies the object one by one and paste it.
+Delete
+Just to mention the key to delete the property  
+delete person.parent
+	true
+person
+1.	Name: ƒ Name()
+2.	age: 24
+3.	firstName: "james"
+4.	lastName: "zones
+ADD
+To add a new property just to mention the new key and the value
+person.married = "single"
+	single
+person
+1.	Name: ƒ Name()
+2.	age: 24
+3.	firstName: "james"
+4.	lastName: "zones"
+5.	married: "single"
+
